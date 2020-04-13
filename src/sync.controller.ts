@@ -122,6 +122,10 @@ const SaveData = async (data : IData) => {
     let resumen_dia_k = Object.keys(data.casos.dias)
     let resumen_dia = Object.values(data.casos.dias)
 
+    let last_day = Number(resumen_dia_k[resumen_dia_k.length-1])
+
+    await Status.findOneAndUpdate({id : 0}, {lastday: last_day})
+
     for (var i = 0; i < resumen_dia_k.length; i++) {
         try {
             var dia_json = resumen_dia[i]

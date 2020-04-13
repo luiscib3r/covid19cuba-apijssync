@@ -2,7 +2,8 @@ import { Schema, model, Document } from 'mongoose'
 
 export interface IStatus extends Document {
     id: number
-    hash: string
+    hash: string,
+    lastday: number
 }
 
 const statusSchema = new Schema({
@@ -13,6 +14,9 @@ const statusSchema = new Schema({
     },
     hash : {
         type: String
+    },
+    lastday: {
+        type: Number
     }
 }, { timestamps: true })
 
