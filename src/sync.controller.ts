@@ -145,9 +145,10 @@ const SaveData = async (data : IData) => {
                 diagnosticados_numero: cant_diagnosticados,
                 sujetos_riesgo : dia_json.sujetos_riesgo || 0,
                 tests_total : dia_json.tests_total || 0,
-                recuperdados_numero : dia_json.recuperdados_numero || 0,
+                recuperados_numero : dia_json.recuperados_numero || 0,
                 graves_numero : dia_json.graves_numero || 0,
-                muertes_numero : dia_json.muertes_numero || 0
+                muertes_numero : dia_json.muertes_numero || 0,
+                evacuados_numero : dia_json.evacuados_numero || 0
             }
 
             const d = await ResumenDia.findOne(

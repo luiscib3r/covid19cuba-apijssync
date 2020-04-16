@@ -6,9 +6,10 @@ export interface IResumenDia extends Document {
     diagnosticados_numero: number
     sujetos_riesgo: number
     tests_total: number
-    recuperdados_numero: number
+    recuperados_numero: number
     graves_numero: number
     muertes_numero: number
+    evacuados_numero: number
 }
 
 const resumenDiaSchema = new Schema({
@@ -35,6 +36,12 @@ const resumenDiaSchema = new Schema({
         type: Number
     },
     muertes_numero: {
+        type: Number
+    },
+    evacuados_numero: {
+        type: Number
+    },
+    recuperados_numero: {
         type: Number
     }
 }, { timestamps: true })
