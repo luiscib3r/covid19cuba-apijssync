@@ -7,7 +7,7 @@ export interface ICasoDetectado extends Document {
     sexo: string
     arribo_a_cuba_foco: string
     consulta_medico: string
-    municipio_deteccion: string
+    municipio_detección: string
     provincia_detección: string
     dpacode_municipio_deteccion: number
     dpacode_provincia_deteccion: number
@@ -33,7 +33,7 @@ const casoDetectadoSchema = new Schema({
     sexo: { type: String },
     arribo_a_cuba_foco: { type: String },
     consulta_medico: { type: String },
-    municipio_deteccion: { type: String },
+    municipio_detección: { type: String },
     provincia_detección: { type: String },
     dpacode_municipio_deteccion: { type: Number },
     dpacode_provincia_deteccion: { type: Number },
