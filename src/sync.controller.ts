@@ -52,6 +52,8 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
             console.log(new_status)
 
             await Status.findOneAndUpdate({ id: 0 }, new_status)
+
+            got.post(process.env.BOT_URI || '', { headers: { STOKEN: process.env.STOKEN }})
         }
     }
     else {
@@ -62,8 +64,6 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
 
         new Status(status).save()
     }
-
-    got.post(process.env.BOT_URI || '', { headers: { STOKEN: process.env.STOKEN }})
 
     return h.response('Sync OK')
 }
