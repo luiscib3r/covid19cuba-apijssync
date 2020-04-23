@@ -63,6 +63,8 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
         new Status(status).save()
     }
 
+    got.post(process.env.BOT_URI || '', { headers: { STOKEN: process.env.STOKEN }})
+
     return h.response('Sync OK')
 }
 
