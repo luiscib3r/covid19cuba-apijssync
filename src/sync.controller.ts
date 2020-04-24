@@ -53,7 +53,9 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
 
             await Status.findOneAndUpdate({ id: 0 }, new_status)
 
-            got.post(process.env.BOT_URI || '', { headers: { STOKEN: process.env.STOKEN }})
+            setTimeout(() => {
+                got.post(process.env.BOT_URI || '', { headers: { STOKEN: process.env.STOKEN }})
+            }, 1500)
         }
     }
     else {
