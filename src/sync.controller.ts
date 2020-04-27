@@ -43,13 +43,9 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
     if(status) {
         if (status.hash != hash) {
 
-            SaveData(data)
+            await SaveData(data)
 
             let new_status = { hash }
-
-            console.log(hash)
-
-            console.log(new_status)
 
             await Status.findOneAndUpdate({ id: 0 }, new_status)
 
@@ -60,7 +56,7 @@ export const syncController = async (req: Request, h: ResponseToolkit) => {
     }
     else {
 
-        SaveData(data)
+        await SaveData(data)
 
         let status = { id: 0, hash: hash }
 
