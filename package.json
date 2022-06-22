@@ -10,7 +10,7 @@
   "license": "AGPL",
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "mongoose": "^5.9.7"
   },
   "devDependencies": {
